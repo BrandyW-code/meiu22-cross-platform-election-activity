@@ -1,11 +1,11 @@
 # MEIU 2022 Cross Platform Election Activity
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Justification of the Research](#justification-of-the-research)
+- [Introduction /Justification of the Research]
 - [Literature Review](#literature-review)
 - [Research Questions](#research-questions)
-- [Data](#data)
+- [Data Assembly]
+- [Data Cleaning and Quality Checks]
 - [Notebooks](#notebooks)
 - [Analysis 1: Cross-Platform Volume and Surge Detection](#analysis-1-cross-platform-volume-and-surge-detection)
 - [Analysis 2: Measurement Comparison and Preliminary Harm Proxy](#analysis-2-measurement-comparison-and-preliminary-harm-proxy)
