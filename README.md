@@ -1,6 +1,17 @@
 # MEIU 2022 Cross Platform Election Activity
-# Project Overview 
-This Data Wrangling final project examines cross-platform election-related activity during the 2022 U.S. midterm period using the MEIU22 dataset. The project focuses on platform volume over time, surge detection (including shared surge windows and possible lead/lag patterns), and an exploratory harm proxy using Reddit text.   
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Justification of the Research](#justification-of-the-research)
+- [Literature Review](#literature-review)
+- [Research Questions](#research-questions)
+- [Data](#data)
+- [Notebooks](#notebooks)
+- [Analysis 1: Cross-Platform Volume and Surge Detection](#analysis-1-cross-platform-volume-and-surge-detection)
+- [Analysis 2: Measurement Comparison and Preliminary Harm Proxy](#analysis-2-measurement-comparison-and-preliminary-harm-proxy)
+- [Conclusion](#conclusion)
+- [Next Steps](#next-steps)
+- [References](#references)
 
 # Introduction / Justification of the Research
 
@@ -26,3 +37,17 @@ Recent empirical work from shared tasks and benchmark work on offensive language
 - **RQ1:** Which platform contributed the largest share of election-related items in MEIU22, and how does that distribution change over time?
 - **RQ2:** What days show the strongest cross-platform surges, and are surges synchronized (same day across platforms) or staggered?
 - **RQ3:** Do surge days correspond with increased hate/harassment signals (using a preliminary text-based harm proxy where available)?
+- 
+
+# Data Assembly
+
+The primary dataset for this project comes from the MEIU22 repository, a multi-platform collection of election-related activity from the 2022 U.S. midterms. For this project, I assembled a working tidy index file (`meiu22_posts_index_tidy_labeled.csv`) that standardizes records across platforms and supports cross-platform comparison in a pandas workflow. The unit of analysis is one item (e.g., a post, tweet, or comment record), represented with fields such as `platform`, `collection_type`, `item_id`, `url`, `created_at_utc`, `relevant`, and `source_file`, along with a derived `day` field used for daily aggregation.
+
+This project uses data from Facebook, Instagram, Reddit, and Twitter, with an important distinction: the Twitter keyword data in the tidy file is a 50k sample. In contrast, Twitter candidate data is available separately through dated candidate daily files in the repository. I selected this structure because it supports the project’s primary goals, daily trend comparisons, surge detection, and a supporting candidate-vs-keyword measurement comparison, while keeping the dataset in a format that is practical to clean, inspect, and analyze in pandas.
+
+# Data Cleaning and Quality Checks
+
+To prepare the data for time-based analysis, I created a usable `day` variable from available timestamps and, where needed, extracted dates from source filenames. This step is essential because the project’s main analyses (daily platform counts, z-score surge detection, and lead/lag interpretation) depend on consistent day-level comparability across platforms. I also checked for missing values and platform-specific gaps, especially in the `day` field, to identify where the dataset supports valid time-series comparisons and where it does not.
+
+A major quality issue in the current tidy index is that the 50k Twitter keyword sample does not provide usable day-level timestamps, which limits Twitter’s comparability in the main cross-platform daily surge analysis. Rather than treating this as a coding failure, I treat it as a measurement constraint and adjust the analysis accordingly (focusing day-level surge detection on Facebook, Instagram, and Reddit while using Twitter candidate daily files to improve coverage). These checks also help define what is included, excluded, or interpreted cautiously in later analyses, which is an important part of making the project reproducible and analytically transparent.
+
