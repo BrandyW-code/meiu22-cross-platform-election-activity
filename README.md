@@ -1,11 +1,11 @@
 # MEIU 2022 Cross Platform Election Activity
 
 ## Table of Contents
-- [Introduction /Justification of the Research]
+- [Introduction / Justification of the Research](#introduction--justification-of-the-research)
 - [Literature Review](#literature-review)
 - [Research Questions](#research-questions)
-- [Data Assembly]
-- [Data Cleaning and Quality Checks]
+- [Data Assembly](#data-assembly)
+- [Data Cleaning and Quality Checks](#data-cleaning-and-quality-checks)
 - [Notebooks](#notebooks)
 - [Analysis 1: Cross-Platform Volume and Surge Detection](#analysis-1-cross-platform-volume-and-surge-detection)
 - [Analysis 2: Measurement Comparison and Preliminary Harm Proxy](#analysis-2-measurement-comparison-and-preliminary-harm-proxy)
@@ -50,4 +50,40 @@ This project uses data from Facebook, Instagram, Reddit, and Twitter, with an im
 To prepare the data for time-based analysis, I created a usable `day` variable from available timestamps and, where needed, extracted dates from source filenames. This step is essential because the project’s main analyses (daily platform counts, z-score surge detection, and lead/lag interpretation) depend on consistent day-level comparability across platforms. I also checked for missing values and platform-specific gaps, especially in the `day` field, to identify where the dataset supports valid time-series comparisons and where it does not.
 
 A major quality issue in the current tidy index is that the 50k Twitter keyword sample does not provide usable day-level timestamps, which limits Twitter’s comparability in the main cross-platform daily surge analysis. Rather than treating this as a coding failure, I treat it as a measurement constraint and adjust the analysis accordingly (focusing day-level surge detection on Facebook, Instagram, and Reddit while using Twitter candidate daily files to improve coverage). These checks also help define what is included, excluded, or interpreted cautiously in later analyses, which is an important part of making the project reproducible and analytically transparent.
+
+# Notebooks
+- Analysis 1: Cross-Platform Volume and Surge Detection
+- Analysis 2: Measurement Comparison and Preliminary Harm Proxy
+
+# Conclusion
+
+This project used the MEIU22 collection to assemble a cross-platform, daily-level view of election-related activity and test an initial suspicion about synchronization, lead/lag timing, and measurement effects. Using a tidy item-level index, I aggregated daily platform counts, applied z-score surge detection, and compared top surge days across Facebook, Instagram, and Reddit. I also added a supporting measurement analysis (candidate vs. keyword collection in the Nov 4–10 window) and a preliminary Reddit-based harm proxy to explore whether surge periods may coincide with shifts in harm-related signals.
+
+The results suggest that election-week attention surges cluster in a shared window, especially around Nov 7–9, but are not perfectly synchronized: Facebook and Instagram peak on 2022-11-08, while Reddit peaks on 2022-11-09. This supports a lead/lag interpretation rather than a fully simultaneous cross-platform spike. The supporting candidate-vs-keyword comparison also shows that collection strategy materially changes what “activity” looks like, reinforcing that cross-platform comparisons are partly measurement comparisons. Together, these findings indicate that the project’s suspicion is strong enough to justify additional data collection and more rigorous testing.
+
+The project remains exploratory and has clear limitations, particularly the Twitter keyword sample’s limited day-level comparability and the lightweight harm proxy. These constraints do not invalidate the findings, but they do shape what can be concluded at this stage. The value of this pilot is that it has produced a reproducible workflow, identified meaningful surge patterns, and generated a clear path for next-stage analysis focused on stronger temporal comparability, formal lead/lag testing, and improved harm measurement.
+
+# Next Steps
+
+Next steps focus on strengthening each research question by using more comparable measurements across platforms. For RQ1 (cross-platform volume), I will extend the daily coverage and ensure platform counts reflect comparable time windows by rebuilding the Twitter timeline using the candidate daily files (which embed dates) and, where permitted, adding timestamp sources so Twitter can be included in the same day-level distribution plots as Facebook/Instagram/Reddit. For RQ2 (surge detection), I will move beyond top-day lists by formally testing synchronization and lead/lag structure using cross-correlation and lagged comparisons across platform time series (e.g., whether Facebook/Instagram peaks systematically precede Reddit peaks by about 1 day during major events).
+
+For RQ3 (harm proxy/escalation), I will replace the current lightweight text indicator with a stronger harm measure, either a validated toxicity/hate detection model or a secondary harm-proxy dataset aligned by date, and then test whether surge days (high z-score days) are associated with statistically higher harm rates than baseline days. I also plan to add narrative context on surge days using text-based exploration where available (for example, Reddit KWIC and clustering; Twitter only via permitted hydration), so the project can move from descriptive surge patterns toward a stronger, evidence-backed account of platform timing and potential escalation signals. Longer term, this workflow could support ongoing monitoring, larger-scale collection, and more advanced modeling as the dataset and measures improve.
+
+# References
+
+Adams, Z., Osman, M., Bechlivanidis, C., & Meder, B. (2023). (Why) is misinformation a problem? Perspectives on Psychological Science, 18(6), 1436–1463. https://doi.org/10.1177/17456916221141344
+
+Avalle, M., Di Marco, N., Etta, G., Sangiorgio, E., Alipour, S., Bonetti, A., Alvisi, L., Scala, A., Baronchelli, A., Cinelli, M., & Quattrociocchi, W. (2024). Persistent interaction patterns across social media platforms and over time. Nature, 628(8008), 582–589. https://doi.org/10.1038/s41586-024-07229-y
+
+Beauvais, C. (2022). Fake news: Why do we believe it? Joint Bone Spine, 89(4), 105371. https://doi.org/10.1016/j.jbspin.2022.105371
+
+Del Vicario, M., Bessi, A., Zollo, F., Petroni, F., Scala, A., Caldarelli, G., Stanley, H. E., & Quattrociocchi, W. (2016). The spreading of misinformation online. Proceedings of the National Academy of Sciences, 113(3), 554–559. https://doi.org/10.1073/pnas.1517441113
+
+Desiderio, A., Mancini, A., Cimini, G., & Di Clemente, R. (2025). Highly engaging events reveal semantic and temporal compression in online community discourse. PNAS Nexus, 4(3), pgaf056. https://doi.org/10.1093/pnasnexus/pgaf056
+
+Ghosh, K., Saha, S., Mandl, T., & Modha, S. (2025). Findings from shared tasks on hate speech detection: Performance patterns for low-resource languages. Pattern Recognition Letters, 199, 303–309. https://doi.org/10.1016/j.patrec.2025.09.004
+
+Wang, X., Koneru, S., Venkit, P. N., Frischmann, B., & Rajtmajer, S. (2024). The unappreciated role of intent in algorithmic moderation of social media content. arXiv (Cornell University). https://doi.org/10.48550/arxiv.2405.11030
+
+Yin, W., & Zubiaga, A. (2021). Towards generalisable hate speech detection: a review on obstacles and solutions. PeerJ Computer Science, 7, e598. https://doi.org/10.7717/peerj-cs.598
 
