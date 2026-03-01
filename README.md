@@ -2,11 +2,6 @@
 # Project Overview 
 This Data Wrangling final project examines cross-platform election-related activity during the 2022 U.S. midterm period using the MEIU22 dataset. The project focuses on platform volume over time, surge detection (including shared surge windows and possible lead/lag patterns), and an exploratory harm proxy using Reddit text.   
 
-**Research Questions**
-- **RQ1:** Which platform contributed the largest share of election-related items in MEIU22, and how does that distribution change over time?
-- **RQ2:** What days show the strongest cross-platform surges, and are surges synchronized (same day across platforms) or staggered?
-- **RQ3:** Do surge days correspond with increased hate/harassment signals (using a preliminary text-based harm proxy where available)?
-
 # Introduction / Justification of the Research
 
 This project uses open, large-scale social media data to explore how election-related activity rises and falls across platforms during the 2022 U.S. midterm election season. The goal is to produce reproducible summaries and visual evidence that help form a clear prognostication: election-week attention surges cluster across platforms, but platforms are not perfectly synchronized (lead/lag patterns appear), and collection choices (candidate vs. keyword) materially change what “activity” looks like.
@@ -26,3 +21,8 @@ This literature is especially relevant to my supporting comparison between candi
 The project’s preliminary harm proxy is informed by computational social science research on toxicity, offensive language, and hate speech detection. Prior work emphasizes that these categories are difficult to operationalize and that automated approaches can blur important distinctions between hateful content, abusive language, and more general offensive expression (Yin & Zubiaga, 2021; Wang et al., 2024). This is important for the present project because the harm indicator is intentionally designed as a lightweight, exploratory measure rather than a validated diagnostic instrument.
 
 Recent empirical work from shared tasks and benchmark work on offensive language detection also shows both the usefulness and limitations of text classification approaches in social media settings (Ghosh et al., 2025). This literature frames the harm analysis as a first-pass proxy that can identify day-to-day variation and motivate follow-up testing, rather than as a basis for strong causal claims. Consequently, the project’s harm proxy is best understood as an exploratory signal that informs the development of a more precise next-stage research design.
+
+# Research Questions
+- **RQ1:** Which platform contributed the largest share of election-related items in MEIU22, and how does that distribution change over time?
+- **RQ2:** What days show the strongest cross-platform surges, and are surges synchronized (same day across platforms) or staggered?
+- **RQ3:** Do surge days correspond with increased hate/harassment signals (using a preliminary text-based harm proxy where available)?
