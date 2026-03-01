@@ -1,1 +1,1 @@
-# meiu22-cross-platform-election-activity
+# MEIU 2022 Cross Platform Election Activity
