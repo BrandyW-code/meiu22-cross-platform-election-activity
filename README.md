@@ -55,7 +55,7 @@ A major quality issue in the current tidy index is that the 50k Twitter keyword 
 
 Note: The notebooks include step-by-step documentation of the data assembly, cleaning, and analysis workflow used to generate the tables and figures in this project.
 
--- [Analysis 1: Cross-Platform Volume and Surge Detection (separate repo)](https://github.com/Bwilliams/meiu22-analysis-1-cross-platform-volume-surge)
+- [Analysis 1: Cross-Platform Volume and Surge Detection](https://github.com/Bwilliams/meiu22-analysis-1-cross-platform-volume-surge)
 - [Analysis 2: Supporting Measurement Analysis and Preliminary Harm Proxy](notebooks/analysis_2_supporting_measurement_and_harm_proxy.ipynb)
 
 # Conclusion
