@@ -8,7 +8,7 @@
 - [Data Cleaning and Quality Checks](#data-cleaning-and-quality-checks)
 - [Notebooks](#notebooks)
   - [Analysis 1: Cross-Platform Volume and Surge Detection](https://github.com/BrandyW-code/Analysis_1_cross_platform_volume_and_surge_detection.ipynb)
-  - [Analysis 2: Measurement Comparison and Preliminary Harm Proxy](#analysis-2-measurement-comparison-and-preliminary-harm-proxy)
+  - [Analysis 2: Measurement Comparison and Preliminary Harm Proxy](https://github.com/BrandyW-code/Analysis-2-Measurement-Comparison-and-Preliminary-Harm-Proxy)
 - [Conclusion](#conclusion)
 - [Next Steps](#next-steps)
 - [References](#references)
@@ -56,7 +56,7 @@ A major quality issue in the current tidy index is that the 50k Twitter keyword 
 Note: The notebooks include step-by-step documentation of the data assembly, cleaning, and analysis workflow used to generate the tables and figures in this project.
 
 - [Analysis 1: Cross-Platform Volume and Surge Detection](https://github.com/BrandyW-code/Analysis_1_cross_platform_volume_and_surge_detection.ipynb)
-- [Analysis 2: Supporting Measurement Analysis and Preliminary Harm Proxy](notebooks/analysis_2_supporting_measurement_and_harm_proxy.ipynb)
+- [Analysis 2: Supporting Measurement Analysis and Preliminary Harm Proxy](https://github.com/BrandyW-code/Analysis-2-Measurement-Comparison-and-Preliminary-Harm-Proxy)
 
 # Conclusion
 
