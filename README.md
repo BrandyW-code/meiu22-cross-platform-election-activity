@@ -51,9 +51,12 @@ To prepare the data for time-based analysis, I created a usable `day` variable f
 
 A major quality issue in the current tidy index is that the 50k Twitter keyword sample does not provide usable day-level timestamps, which limits Twitter’s comparability in the main cross-platform daily surge analysis. Rather than treating this as a coding failure, I treat it as a measurement constraint and adjust the analysis accordingly (focusing day-level surge detection on Facebook, Instagram, and Reddit while using Twitter candidate daily files to improve coverage). These checks also help define what is included, excluded, or interpreted cautiously in later analysis, which is an important part of making the project reproducible and analytically transparent.
 
-# Notebooks
-- Analysis 1: Cross-Platform Volume and Surge Detection
-- Analysis 2: Measurement Comparison and Preliminary Harm Proxy
+## Notebooks
+
+Note: The notebooks include step-by-step documentation of the data assembly, cleaning, and analysis workflow used to generate the tables and figures in this project.
+
+- [Analysis 1: Cross-Platform Volume and Surge Detection](notebooks/analysis_1_cross_platform_volume_and_surge_detection.ipynb)
+- [Analysis 2: Supporting Measurement Analysis and Preliminary Harm Proxy](notebooks/analysis_2_measurement_and_harm_proxy.ipynb)
 
 # Conclusion
 
