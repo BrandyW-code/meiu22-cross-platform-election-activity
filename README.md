@@ -7,7 +7,7 @@
 - [Data Assembly](#data-assembly)
 - [Data Cleaning and Quality Checks](#data-cleaning-and-quality-checks)
 - [Notebooks](#notebooks)
-- [Analysis 1: Cross-Platform Volume and Surge Detection](#analysis-1-cross-platform-volume-and-surge-detection)
+- [Analysis 1: Cross-Platform Volume and Surge Detection](https://github.com/BrandyW-code/Analysis_1_cross_platform_volume_and_surge_detection.ipynb)
 - [Analysis 2: Measurement Comparison and Preliminary Harm Proxy](#analysis-2-measurement-comparison-and-preliminary-harm-proxy)
 - [Conclusion](#conclusion)
 - [Next Steps](#next-steps)
